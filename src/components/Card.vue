@@ -1,6 +1,6 @@
 <template>
     <div class="card shake">
-         <button @click="deleteCity(cityWeather)" class="close-card"><i class="fa fa-times" aria-hidden="true"></i></button>
+         <button @click="deleteCity(cityWeather)" class="close-card"><i class="gg-close"></i></button>
          <h3>{{cityWeather.name}}, {{cityWeather.sys.country}}</h3>
          <p class="degrice">{{getCelsius}} °C</p>
          <p class="weather-desc">{{generateDescription}}</p>
@@ -126,8 +126,33 @@ td {
   font-weight: bold;
 }
 
-.fa-times {
-  color: #ffffff;
+.gg-close {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px
+}
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 5px;
+    color: #ffffff;
+}
+.gg-close::after {
+    transform: rotate(-45deg)
 }
 
 

@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard">
+    <h1 class="title">What's the Weather in</h1>
     <div class="user">
       <button class="avatar">
         <picture>
@@ -89,6 +90,10 @@ export default {
     rgba(255, 255, 255, 0.3)
   );
   border-radius: 2rem;
+}
+
+.title {
+  display: none;
 }
 
 .avatar {
@@ -198,6 +203,20 @@ select {
 }
 
 @media screen and (max-width: 800px) {
+  .title {
+    display: block;
+
+    font-size: 30px;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .cities {
+    width: 90%;
+  }
+
   .cities > ul {
     flex-direction: row;
     flex-wrap: wrap;
